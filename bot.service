@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram bot 'diet'
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/usr/bot
+ExecStart=/usr/bin/python3 /usr/bot/main.py
+RestartSec=10
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
